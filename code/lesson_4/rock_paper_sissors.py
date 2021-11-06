@@ -32,7 +32,7 @@ def play_game():
     playing = True
 
     while playing: 
-        print("[n] play new game | [q] quit ")
+        print("[n] play new game | [q] quit")
         input_ = input("~ ")
 
         if input_ == "n": 
