@@ -11,6 +11,8 @@
 # miss:         1                            #
 ##############################################
 
+import random
+
 board = [[0 for _ in range(10)] for _ in range(10)]
 
 def print_board(): 
@@ -80,8 +82,19 @@ def make_move(x, y):
 # good news is that for this we dont have worry about using the letters cause everything is a number to the computer 
 # hint try to use the make_move function 
 def cpu_guess(): 
-    pass 
+    # pick random *VALID* coordinates
+    valid_move = False 
     
+    while not valid_move:
+        rand_x = random.randint(0, 9)
+        rand_y = random.randint(0, 9) 
+            
+        if board[rand_x][rand_y] != "X" and board[rand_x][rand_y] != "O": 
+            valid_move = True
+            #hint was to try to use the make_move function
+            return make_move(rand_x, rand_y)
+            
+    return 0 
 
 def main(): 
     
@@ -96,12 +109,12 @@ def main():
     playing = True 
     while playing: 
         print_board()
-        move = input("Choose a square: ")
+        #move = input("Choose a square: ")
         
-        x = get_num_from_letter(move[0]) - 1
-        y = int(move[1])
+        #x = get_num_from_letter(move[0]) - 1
+        #y = int(move[1])
         
-        total_hits += make_move(x, y)
+        total_hits += cpu_guess()
         
         if total_hits >= 19: 
             break 
