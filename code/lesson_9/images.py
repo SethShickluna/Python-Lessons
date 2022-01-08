@@ -5,8 +5,8 @@ from PIL import ImageDraw
 
 import random
 
-# my_image = Image.open("C:/Users/seths/Documents/tutoring/Python-Lessons/code/lesson_9/newimage.jpg")
-my_image = Image.new(mode="RGB", size=(600, 400), color=(40, 70, 190))
+my_image = Image.open("C:/Users/seths/Documents/tutoring/Python-Lessons/code/lesson_9/newimage.jpg")
+#my_image = Image.new(mode="RGB", size=(600, 400), color=(40, 70, 190))
 
 
 def image_stuff():
@@ -21,18 +21,14 @@ def image_stuff():
 
 def pixel_stuff():
     pixels = my_image.load()
-    width, height = my_image.size  # this is important so we dont access pixels that dont exist
+    width, height = my_image.size
 
-    for i in range(width):  # integer division (//) so it is an int, not a float
+    for i in range(width):
         for j in range(height):
-            # getting the rgb value of a pixel image.getpixel((x, y))
-            r, g, b, a = my_image.getpixel((i, j))  # a is opacity (transparency), dont worry about it
-            # you can use these r, g, b values as the color of the current pixel
+            r, g, b = my_image.getpixel((i, j))
 
-            x = width - i - 1
-            y = j
-
-            pixels[x, y] = pixels[i, j]
+            grayscale = (0.299 * r + 0.587 * g + 0.114 * b)
+            pixels[i, j] = (int(grayscale), int(grayscale), int(grayscale))
 
     my_image.show()
 
@@ -49,5 +45,5 @@ def draw_image():
     my_image.show()
 
 
-
+pixel_stuff()
 

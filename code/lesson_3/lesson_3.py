@@ -1,6 +1,5 @@
 # Lesson_3 code
 
-
 decimal_num = 1.3
 
 # print(type(decimal_num))
@@ -40,6 +39,13 @@ new_list = [x for x in range(10) if x % 2 != 0]
 another_list = [y if y > 5 else -1 for y in my_list]
 
 print(another_list)
+
+
+
+name = input("What is your name: ")
+
+if name: 
+    print("Nice name")
 
 
 

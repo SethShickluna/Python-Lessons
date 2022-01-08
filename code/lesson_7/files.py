@@ -32,6 +32,12 @@ def appending(lst):
     my_file.writelines(lst)
 
     my_file.close()
+    
+    
+# context manager 
+with open("filename") as file:
+    file.readline()
+    
 
 
 strings = ["Hello \n", "I\n", "love\n", "Python!\n"]

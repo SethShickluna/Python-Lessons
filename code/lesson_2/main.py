@@ -1,11 +1,11 @@
 # lesson 2
 
-completed = True # set to false to use the calculator
+completed = False # set to false to use the calculator
 
 while not completed: # while completed == False
 
     # get string from user input
-    user_input = input("Please input 2 numbers and an operation or type done to quit: ")
+    user_input = input("Please input 2 numbers and an operation or type done to quit: ") # 5 * 5
 
     if user_input.lower() == "done":
         completed = True
@@ -20,7 +20,7 @@ while not completed: # while completed == False
 
     calculated = True
 
-    if operators[0].isdigit() and operators[2].isdigit():
+    if operators[0].isdigit() and operators[2].isdigit(): #invalid -> 23fg / sad5
         number_1 = int(operators[0])
         number_2 = int(operators[2])
     else:
@@ -45,19 +45,8 @@ while not completed: # while completed == False
 
     if calculated:
         print(result)
+        
 
-
-number = 1
-
-while number < 5:
-    print(number)
-    number += 1
-
-print("all done")
-
-
-for number in range(10):  #starts at 0, 1, ...
-    print(number)
 
 
 

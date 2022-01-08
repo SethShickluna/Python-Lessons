@@ -15,3 +15,10 @@ print("Hello", name, sep="\n")
 print("Question 3", end=": ")
 ###############################
 print("Hello! ", end=name)
+
+
+# Declaring variables 
+
+x = 10 
+
+pi = 3.14 #float value
